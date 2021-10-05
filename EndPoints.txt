@@ -1,0 +1,14 @@
+Desc  -  Method  -  Path  - Body 
+Add Owner - POST - Owners - Owner DTO
+Add Property - POST - Properties/{OwnerGUId} - Property DTO
+Get Property - GET - Properties/{PropertyGUId} - X
+Get Owner Properties - GET - Properties/{OwnerGUId} - X
+Get All Properties - GET - Properties - X
+Add Customer - POST - Customers - Customer DTO
+Search - GET - Properties/{state}/{city}/{zipcode} - X
+SearchByKeyword -  GET - Properties/{keyword} - X 
+SearchByCity -  GET - Properties/{cityName} - X 
+SearchByState -  GET - Properties/{stateName} - X 
+SearchByZipCode -  GET - Properties/{zipCodeName} - X
+Reserve - PATCH - Properties/Reserve/{PropertyGUID}/{CustomerId} - X
+Get Weather - GET - Weather/{PropertyGUId} - X
