@@ -130,7 +130,7 @@ namespace web.Migrations
             modelBuilder.Entity("web.Property", b =>
                 {
                     b.HasOne("web.Owner", "Owner")
-                        .WithMany()
+                        .WithMany("Properties")
                         .HasForeignKey("OwnerId");
 
                     b.Navigation("Owner");
@@ -139,6 +139,11 @@ namespace web.Migrations
             modelBuilder.Entity("web.Customer", b =>
                 {
                     b.Navigation("DateRanges");
+                });
+
+            modelBuilder.Entity("web.Owner", b =>
+                {
+                    b.Navigation("Properties");
                 });
 
             modelBuilder.Entity("web.Property", b =>
