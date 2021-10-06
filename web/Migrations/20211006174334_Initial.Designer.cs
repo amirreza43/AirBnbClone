@@ -9,7 +9,7 @@ using web;
 namespace web.Migrations
 {
     [DbContext(typeof(Database))]
-    [Migration("20211005201343_Initial")]
+    [Migration("20211006174334_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -132,7 +132,7 @@ namespace web.Migrations
             modelBuilder.Entity("web.Property", b =>
                 {
                     b.HasOne("web.Owner", "Owner")
-                        .WithMany()
+                        .WithMany("Properties")
                         .HasForeignKey("OwnerId");
 
                     b.Navigation("Owner");
@@ -141,6 +141,11 @@ namespace web.Migrations
             modelBuilder.Entity("web.Customer", b =>
                 {
                     b.Navigation("DateRanges");
+                });
+
+            modelBuilder.Entity("web.Owner", b =>
+                {
+                    b.Navigation("Properties");
                 });
 
             modelBuilder.Entity("web.Property", b =>

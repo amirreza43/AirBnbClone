@@ -21,5 +21,25 @@ namespace web
         public List<Customer> Customers{get; set;}        
         [JsonIgnore]
         public List<DateRange> DateRanges{get; set;}
+
+        Property(){
+            Customers = new List<Customer>();
+            DateRanges = new List<DateRange>(); 
+        }
+        public Property(PropertyDto propertyDto){
+            Id = Guid.NewGuid();
+            Zipcode = propertyDto.Zipcode;
+            City = propertyDto.City;
+            State = propertyDto.State;
+            RentalType = propertyDto.RentalType;
+            NumberOfBeds = propertyDto.NumberOfBeds;
+            NumberOfBaths = propertyDto.NumberOfBaths;
+            Size = propertyDto.Size;
+            Price = propertyDto.Price;
+            Title = propertyDto.Title;
+            Owner = new();
+            Customers = new List<Customer>();
+            DateRanges = new List<DateRange>();   
+        }
     }
 }
